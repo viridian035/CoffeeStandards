@@ -62,7 +62,7 @@
   };
 
   LSDIR = function(pth) {
-    return FS.readdirSync(pth, _DIR_OPTS);
+    return FS.readdirSync(pth);
   };
 
   MKDIR = function(pth) {

@@ -41,7 +41,7 @@ FOUT = (pth, cnt) ->
 	FS.writeFileSync pth, cnt, _FILE_OPTS
 
 LSDIR = (pth) ->
-	FS.readdirSync pth, _DIR_OPTS
+	FS.readdirSync pth
 
 MKDIR = (pth) ->
 	FS.mkdirSync pth, _DIR_OPTS
@@ -53,5 +53,5 @@ DEL = (pth) ->
 module.exports = {
 	PJN, STR, WRITE,
 	EXEC,
-	FCHK, FIN, FOUT, LSDIR, MKDIR, DEL
+	CP, FCHK, FIN, FOUT, LSDIR, MKDIR, DEL
 }
