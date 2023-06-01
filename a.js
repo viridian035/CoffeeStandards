@@ -74,6 +74,6 @@
   };
 
   // _EXPORT
-  module.exports = {PJN, STR, WRITE, EXEC, FCHK, FIN, FOUT, LSDIR, MKDIR, DEL};
+  module.exports = {PJN, STR, WRITE, EXEC, CP, FCHK, FIN, FOUT, LSDIR, MKDIR, DEL};
 
 }).call(this);
