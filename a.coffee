@@ -20,7 +20,17 @@ STR = (x) ->
 WRITE = (...items) ->
 	console.log ...items
 
+# CHILD PROCESS
+EXEC = (cmd) ->
+	try
+		CHPR.execSync cmd
+	catch error
+		WRITE 'error running ' + cmd
+
 # FS
+CP = (src, dst) ->
+	FS.cpSync src, dst, _DIR_OPTS
+
 FCHK = (pth) ->
 	FS.existsSync pth
 
@@ -42,5 +52,6 @@ DEL = (pth) ->
 # _EXPORT
 module.exports = {
 	PJN, STR, WRITE,
+	EXEC,
 	FCHK, FIN, FOUT, LSDIR, MKDIR, DEL
 }
