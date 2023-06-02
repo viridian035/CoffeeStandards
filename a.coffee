@@ -5,17 +5,29 @@ _DIR_OPTS =
 _FILE_OPTS =
 	encoding: 'utf8'
 
+_IFCE_OPTS =
+	input: process.stdin
+	output: process.stdout
+
 # _IMPORTS
+CHPR = require 'child_process'
 FS = require 'fs'
 PTH = require 'path'
-CHPR = require 'child_process'
+RL = require 'readline/promises'
 
 # BASIC
 PJN = (...parts) ->
 	PTH.join ...parts.map STR
 
+READ = (qry) ->
+	iface = RL.createInterface _IFCE_OPTS
+	resp = await iface.question qry
+	do iface.close
+
+	resp
+
 STR = (x) ->
-	x.toString()
+	do x.toString
 
 WRITE = (...items) ->
 	console.log ...items
@@ -26,6 +38,7 @@ EXEC = (cmd) ->
 		CHPR.execSync cmd
 	catch error
 		WRITE 'error running ' + cmd
+
 
 # FS
 CP = (src, dst) ->
@@ -51,7 +64,7 @@ DEL = (pth) ->
 
 # _EXPORT
 module.exports = {
-	PJN, STR, WRITE,
+	PJN, READ, STR, WRITE,
 	EXEC,
 	CP, FCHK, FIN, FOUT, LSDIR, MKDIR, DEL
 }
