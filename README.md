@@ -1,2 +1,2 @@
-# STRD_DEV_CF
+# CoffeeStandards
 Standard utility functions for CoffeeScript.

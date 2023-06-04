@@ -1,5 +1,5 @@
 {
-  "name": "strd-dev-cf",
+  "name": "coffee-standards",
   "version": "1.0.0",
   "description": "Standard utility functions for CoffeeScript.",
   "main": "a.js",
