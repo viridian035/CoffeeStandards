@@ -34,10 +34,7 @@ WRITE = (...items) ->
 
 # CHILD PROCESS
 EXEC = (cmd) ->
-	try
-		CHPR.execSync cmd
-	catch error
-		WRITE 'error running ' + cmd
+	CHPR.execSync cmd
 
 
 # FS
