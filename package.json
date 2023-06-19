@@ -1,6 +1,6 @@
 {
   "name": "coffee-standards",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Standard utility functions for CoffeeScript.",
   "main": "a.js",
   "scripts": {
